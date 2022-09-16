@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from "react";
+import Modal from "./Modal";
+import './style.css';
+import ListUsers from "./ListUsers";
 
 function App() {
+
+  const[modal,setModal]=useState(null);
+  const[addUser,setAddUser]=useState([]);
+  function clearField(){
+
+    setAddUser([]);
+    localStorage.removeItem('userName');
+  }
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <div className="tableOfUsers">
+    
+    {/* <input type="button" onClick={setModal(false)} value="New User"/>  */}
+    <button onClick={()=>{setModal(true)}}>Add New User</button>   
+    <button onClick={clearField}>CLearStorage</button>
+
+    <Modal modal={modal} setModal={setModal} addUser={addUser} setAddUser={setAddUser} />
+   
+     <div >
+     <table className="table">
+     <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Phone</th>
+      </tr>
+     </thead>
+     
+     
+        <ListUsers addUser={addUser}/>
+     
+     
+     </table>
+
+
+
+
+
+     </div>
+     
+
+
+
+     </div>
+   
   );
 }
 
 export default App;
+ 
