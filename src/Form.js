@@ -4,17 +4,7 @@ export default function Form({addUser,setAddUser}){
     const nameField = React.useRef(null);
     const phoneField = React.useRef(null);
       
-    useEffect(() => {    
- 
-       const userName = JSON.parse(localStorage.getItem('userName')) || [];
-       
-       if(userName!==null) {
-          setAddUser(userName);
-      
-         }
-         console.log("Read");
-           
-    },[]);
+   
 
     useEffect(()=>{
       if(addUser.length>0){

@@ -29,17 +29,10 @@ body{
     align-items:center;
 
 }
-.btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 32px;
-    width: 30px;
-    height: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    text-align: center;
-    transform: rotate(45deg);
+button {
+    margin-right: 15px;
+    padding: 3px;
+   
 
 }
 .table {

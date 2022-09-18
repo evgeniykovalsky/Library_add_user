@@ -16,7 +16,7 @@ const Modal = ({modal,setModal, addUser, setAddUser}) => {
             <h3>New visitor</h3>
                       
            <Form addUser={addUser} setAddUser={setAddUser} />
-           <button id="close" onClick={()=>{setModal(null)}}>Close</button>
+           <input id="close" type="button" value="Close" onClick={()=>{setModal(null)}}/>
                 
            
             </div>
